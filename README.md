@@ -18,3 +18,5 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB AUTO_INCREMENT=103 DEFAULT CHARSET=utf8mb4;
 
 ************************************/
+
+2019-6-27添加了Filter，对未登录用户过滤，对非法敏感字符过滤
