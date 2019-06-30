@@ -33,6 +33,8 @@
   <div align="center">
     <a href=" ${pageContext.request.contextPath}/findUserByPageServlet" style="font-size: 33px;text-decoration: none">查询所有用户信息</a>
   </div>
-
+  <div>
+    ${ccc}
+  </div>
   </body>
 </html>
