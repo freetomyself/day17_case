@@ -94,11 +94,12 @@ public class SensitiveWordsFilter implements Filter {
 
         System.out.println("进来了");
         ServletContext servletContext = config.getServletContext();
-        //获取真实路径
-        String realPath = servletContext.getRealPath("/WEB-INF/classes/敏感词汇.txt");
+        //获取真实路径，名字英文防止部分系统无法识别中文
+        String realPath = servletContext.getRealPath("/WEB-INF/classes/mgch.txt");
 
         //读入数据
         try {
+            //这边字符集默认为系统字符集
             BufferedReader br = new BufferedReader(new FileReader(realPath));
             String context = null;
             while ((context = br.readLine()) != null) {
