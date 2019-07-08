@@ -1,7 +1,10 @@
 package cn.itcast.web.servlet;
 
+import cn.itcast.domain.Person;
 import cn.itcast.domain.User;
+import cn.itcast.service.PersonService;
 import cn.itcast.service.UserService;
+import cn.itcast.service.imp.PersonServiceImp;
 import cn.itcast.service.imp.UserServiceImp;
 import org.apache.commons.beanutils.BeanUtils;
 
@@ -45,18 +48,21 @@ public class LoginServlet extends HttpServlet {
             Map<String, String[]> map = request.getParameterMap();
 //        4封装User对象
 //        创建一个User对象用于做关联
-            User user = new User();
+//            User user = new User();
+            Person person = new Person();
             try {
 //            将map与user关联
-                BeanUtils.populate(user, map);
+//                BeanUtils.populate(user, map);
+                BeanUtils.populate(person, map);
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             } catch (InvocationTargetException e) {
                 e.printStackTrace();
             }
 //        5调用Service查询
-        UserService userService = new UserServiceImp();
-        User loginuser = userService.login(user);
+//        UserService userService = new UserServiceImp();
+        PersonService personService = new PersonServiceImp();
+        Person loginuser = personService.login(person);
         System.out.println(loginuser);
 //        6判断是否登录成功
         if(loginuser!=null){

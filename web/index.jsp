@@ -28,7 +28,7 @@
   </head>
   <body>
   <div style="margin: 5px">
-    ${user.name},欢迎您。
+    ${user.username},欢迎您。
   </div>
   <div align="center">
     <a href=" ${pageContext.request.contextPath}/findUserByPageServlet" style="font-size: 33px;text-decoration: none">查询所有用户信息</a>
